@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
     lazy var tableView = UITableView(frame: .zero, style: .insetGrouped)
-    
+    lazy var player = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sonoplastia"
@@ -27,6 +28,17 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func playAudio(audioName: String) {
+        guard let audioData = NSDataAsset(name: audioName)?.data else { return }
+        
+        do {
+            player = try AVAudioPlayer(data: audioData)
+            player.play()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -41,5 +53,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "Test"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
