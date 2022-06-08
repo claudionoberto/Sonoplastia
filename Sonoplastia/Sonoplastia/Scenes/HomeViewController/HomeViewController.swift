@@ -39,20 +39,21 @@ class HomeViewController: UIViewController {
         let audioTwelve = AudioModel(name: "Tapa", assetName: "Tuff")
         let audioThirteen = AudioModel(name: "Ui", assetName: "Ui")
         let audioFourteen = AudioModel(name: "Vamo Dança", assetName: "VamoDancar")
-        audios.append(audioOne)
-        audios.append(audioTwo)
-        audios.append(audioThree)
-        audios.append(audioFour)
-        audios.append(audioFive)
-        audios.append(audioSix)
-        audios.append(audioSeven)
-        audios.append(audioEight)
-        audios.append(audioNine)
-        audios.append(audioTen)
-        audios.append(audioEleven)
-        audios.append(audioTwelve)
-        audios.append(audioThirteen)
-        audios.append(audioFourteen)
+        
+        [audioOne,
+         audioTwo,
+         audioThree,
+         audioFour,
+         audioFive,
+         audioSix,
+         audioSeven,
+         audioEight,
+         audioNine,
+         audioTen,
+         audioEleven,
+         audioTwelve,
+         audioThirteen,
+         audioFourteen].forEach {audios.append($0)}
     }
     
     func configTableView() {
@@ -63,10 +64,10 @@ class HomeViewController: UIViewController {
     }
     
     func playAudio(audioName: String) {
-        guard let audioData = NSDataAsset(name: audioName)?.data else { return }
+        guard let path = Bundle.main.path(forResource: audioName, ofType: "mp3") else { return }
         
         do {
-            player = try AVAudioPlayer(data: audioData)
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             player.play()
         } catch {
             print(error.localizedDescription)
@@ -96,10 +97,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func makeContextMenu(Data: AudioModel) -> UIMenu {
         let share = UIAction(title: "Compartilhar", image: UIImage(systemName: "square.and.arrow.up")) { action in
-            guard let audioData = NSDataAsset(name: Data.assetName)?.data else { return }
-            //let item = URL.init(dataRepresentation: audioData, relativeTo: nil)
-            let ac = UIActivityViewController(activityItems: [audioData], applicationActivities: [])
-            self.present(ac,animated: true)
+            let activityItem = URL.init(fileURLWithPath: Bundle.main.path(forResource: Data.assetName, ofType: "mp3")!)
+            let activityVC = UIActivityViewController(activityItems: [activityItem],applicationActivities: nil)
+            activityVC.popoverPresentationController?.sourceView = self.view
+            self.present(activityVC, animated: true)
         }
         return UIMenu(title: "", children: [share])
     }

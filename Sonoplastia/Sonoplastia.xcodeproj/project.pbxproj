@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391133992851519D00182D8D /* DancaGatinhoDanca.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3911338E2851519C00182D8D /* DancaGatinhoDanca.mp3 */; };
+		3911339A2851519D00182D8D /* Tuff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3911338F2851519C00182D8D /* Tuff.mp3 */; };
+		3911339B2851519D00182D8D /* Demais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133902851519C00182D8D /* Demais.mp3 */; };
+		3911339C2851519D00182D8D /* Cavalo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133912851519C00182D8D /* Cavalo.mp3 */; };
+		3911339D2851519D00182D8D /* Ui.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133922851519D00182D8D /* Ui.mp3 */; };
+		3911339E2851519D00182D8D /* Ratinhoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133932851519D00182D8D /* Ratinhoo.mp3 */; };
+		3911339F2851519D00182D8D /* Pare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133942851519D00182D8D /* Pare.mp3 */; };
+		391133A02851519D00182D8D /* Ai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133952851519D00182D8D /* Ai.mp3 */; };
+		391133A12851519D00182D8D /* Risada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133962851519D00182D8D /* Risada.mp3 */; };
+		391133A22851519D00182D8D /* VamoDancar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133972851519D00182D8D /* VamoDancar.mp3 */; };
+		391133A32851519D00182D8D /* EleGosta.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133982851519D00182D8D /* EleGosta.mp3 */; };
+		391133A5285151B400182D8D /* Nao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133A4285151B400182D8D /* Nao.mp3 */; };
+		391133A7285151C100182D8D /* Rapais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133A6285151C100182D8D /* Rapais.mp3 */; };
+		391133A9285151D800182D8D /* Tome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 391133A8285151D800182D8D /* Tome.mp3 */; };
 		395F7A21284FAEC700FFFE5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395F7A20284FAEC700FFFE5F /* AppDelegate.swift */; };
 		395F7A25284FAEC700FFFE5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395F7A24284FAEC700FFFE5F /* HomeViewController.swift */; };
 		395F7A2A284FAEC800FFFE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 395F7A29284FAEC800FFFE5F /* Assets.xcassets */; };
@@ -15,6 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3911338E2851519C00182D8D /* DancaGatinhoDanca.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DancaGatinhoDanca.mp3; sourceTree = "<group>"; };
+		3911338F2851519C00182D8D /* Tuff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuff.mp3; sourceTree = "<group>"; };
+		391133902851519C00182D8D /* Demais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Demais.mp3; sourceTree = "<group>"; };
+		391133912851519C00182D8D /* Cavalo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cavalo.mp3; sourceTree = "<group>"; };
+		391133922851519D00182D8D /* Ui.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ui.mp3; sourceTree = "<group>"; };
+		391133932851519D00182D8D /* Ratinhoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ratinhoo.mp3; sourceTree = "<group>"; };
+		391133942851519D00182D8D /* Pare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pare.mp3; sourceTree = "<group>"; };
+		391133952851519D00182D8D /* Ai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ai.mp3; sourceTree = "<group>"; };
+		391133962851519D00182D8D /* Risada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Risada.mp3; sourceTree = "<group>"; };
+		391133972851519D00182D8D /* VamoDancar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VamoDancar.mp3; sourceTree = "<group>"; };
+		391133982851519D00182D8D /* EleGosta.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EleGosta.mp3; sourceTree = "<group>"; };
+		391133A4285151B400182D8D /* Nao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Nao.mp3; path = Sonoplastia/Resources/Assets.xcassets/Nao.dataset/Nao.mp3; sourceTree = SOURCE_ROOT; };
+		391133A6285151C100182D8D /* Rapais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rapais.mp3; path = Sonoplastia/Resources/Assets.xcassets/Rapais.dataset/Rapais.mp3; sourceTree = SOURCE_ROOT; };
+		391133A8285151D800182D8D /* Tome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Tome.mp3; path = Sonoplastia/Resources/Assets.xcassets/Tome.dataset/Tome.mp3; sourceTree = SOURCE_ROOT; };
 		395F7A1D284FAEC700FFFE5F /* Sonoplastia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonoplastia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		395F7A20284FAEC700FFFE5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		395F7A24284FAEC700FFFE5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +63,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3911338D2851516600182D8D /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				391133952851519D00182D8D /* Ai.mp3 */,
+				391133912851519C00182D8D /* Cavalo.mp3 */,
+				3911338E2851519C00182D8D /* DancaGatinhoDanca.mp3 */,
+				391133902851519C00182D8D /* Demais.mp3 */,
+				391133A8285151D800182D8D /* Tome.mp3 */,
+				391133982851519D00182D8D /* EleGosta.mp3 */,
+				391133942851519D00182D8D /* Pare.mp3 */,
+				391133A4285151B400182D8D /* Nao.mp3 */,
+				391133A6285151C100182D8D /* Rapais.mp3 */,
+				391133932851519D00182D8D /* Ratinhoo.mp3 */,
+				391133962851519D00182D8D /* Risada.mp3 */,
+				3911338F2851519C00182D8D /* Tuff.mp3 */,
+				391133922851519D00182D8D /* Ui.mp3 */,
+				391133972851519D00182D8D /* VamoDancar.mp3 */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
 		395F7A14284FAEC700FFFE5F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +132,7 @@
 		39BDEDF7284FBB4B00B62E79 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3911338D2851516600182D8D /* Audios */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,8 +212,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391133A22851519D00182D8D /* VamoDancar.mp3 in Resources */,
+				391133A02851519D00182D8D /* Ai.mp3 in Resources */,
+				3911339F2851519D00182D8D /* Pare.mp3 in Resources */,
+				391133A7285151C100182D8D /* Rapais.mp3 in Resources */,
 				395F7A2D284FAEC800FFFE5F /* LaunchScreen.storyboard in Resources */,
+				3911339D2851519D00182D8D /* Ui.mp3 in Resources */,
+				3911339B2851519D00182D8D /* Demais.mp3 in Resources */,
+				391133A32851519D00182D8D /* EleGosta.mp3 in Resources */,
+				391133992851519D00182D8D /* DancaGatinhoDanca.mp3 in Resources */,
 				395F7A2A284FAEC800FFFE5F /* Assets.xcassets in Resources */,
+				391133A5285151B400182D8D /* Nao.mp3 in Resources */,
+				391133A9285151D800182D8D /* Tome.mp3 in Resources */,
+				3911339C2851519D00182D8D /* Cavalo.mp3 in Resources */,
+				391133A12851519D00182D8D /* Risada.mp3 in Resources */,
+				3911339E2851519D00182D8D /* Ratinhoo.mp3 in Resources */,
+				3911339A2851519D00182D8D /* Tuff.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
