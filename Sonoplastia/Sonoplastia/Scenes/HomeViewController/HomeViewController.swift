@@ -93,4 +93,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         playAudio(audioName: audios[indexPath.row].assetName)
     }
+    
+    func makeContextMenu(Data: AudioModel) -> UIMenu {
+        let share = UIAction(title: "Compartilhar", image: UIImage(systemName: "square.and.arrow.up")) { action in
+            guard let audioData = NSDataAsset(name: Data.assetName)?.data else { return }
+            //let item = URL.init(dataRepresentation: audioData, relativeTo: nil)
+            let ac = UIActivityViewController(activityItems: [audioData], applicationActivities: [])
+            self.present(ac,animated: true)
+        }
+        return UIMenu(title: "", children: [share])
+    }
+    
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let selectedCell = audios[indexPath.row]
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
+            return self.makeContextMenu(Data: selectedCell)
+        })
+    }
 }
