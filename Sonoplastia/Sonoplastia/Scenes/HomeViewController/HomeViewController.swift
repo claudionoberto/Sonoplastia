@@ -25,20 +25,20 @@ class HomeViewController: UIViewController {
     }
     
     func configData() {
-        let audioOne = AudioModel(name: "Ratinho", assetName: "Ratinhoo")
-        let audioTwo = AudioModel(name: "Ai", assetName: "Ai")
-        let audioThree = AudioModel(name: "Cavalo", assetName: "Cavalo")
-        let audioFour = AudioModel(name: "Dança Gatinho", assetName: "DancaGatinhoDanca")
-        let audioFive = AudioModel(name: "Demais", assetName: "Demais")
-        let audioSix = AudioModel(name: "Ele Gosta", assetName: "EleGosta")
-        let audioSeven = AudioModel(name: "Não", assetName: "Nao")
-        let audioEight = AudioModel(name: "Pare", assetName: "Pare")
-        let audioNine = AudioModel(name: "Rapaz", assetName: "Rapais")
-        let audioTen = AudioModel(name: "Atumalaca", assetName: "Risada")
-        let audioEleven = AudioModel(name: "Tome", assetName: "Tome")
-        let audioTwelve = AudioModel(name: "Tapa", assetName: "Tuff")
-        let audioThirteen = AudioModel(name: "Ui", assetName: "Ui")
-        let audioFourteen = AudioModel(name: "Vamo Dança", assetName: "VamoDancar")
+        let audioOne = AudioModel(name: "Ratinho", assetName: "Ratinho_audio")
+        let audioTwo = AudioModel(name: "Ai", assetName: "Ai_audio")
+        let audioThree = AudioModel(name: "Cavalo", assetName: "Cavalo_audio")
+        let audioFour = AudioModel(name: "Dança Gatinho", assetName: "DancaGatinho_audio")
+        let audioFive = AudioModel(name: "Demais", assetName: "Demais_audio")
+        let audioSix = AudioModel(name: "Ele Gosta", assetName: "EleGosta_audio")
+        let audioSeven = AudioModel(name: "Não", assetName: "Nao_audio")
+        let audioEight = AudioModel(name: "Pare", assetName: "Pare_audio")
+        let audioNine = AudioModel(name: "Rapaz", assetName: "Rapaz_audio")
+        let audioTen = AudioModel(name: "Atumalaca", assetName: "Atumalaca_audio")
+        let audioEleven = AudioModel(name: "Tome", assetName: "Tome_audio")
+        let audioTwelve = AudioModel(name: "Tapa", assetName: "Tapa_audio")
+        let audioThirteen = AudioModel(name: "Ui", assetName: "Ui_audio")
+        let audioFourteen = AudioModel(name: "Vamo Dança", assetName: "VamoDancar_audio")
         
         [audioOne,
          audioTwo,
