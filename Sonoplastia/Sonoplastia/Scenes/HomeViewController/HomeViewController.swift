@@ -11,10 +11,15 @@ import AVFoundation
 class HomeViewController: UIViewController {
     lazy var tableView = UITableView(frame: .zero, style: .insetGrouped)
     lazy var player = AVAudioPlayer()
+    var selectedAudios: [String] = []
     var audios = [AudioModel]()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sonoplastia"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancelar", style: .plain, target: self, action: #selector(cancelButtonAction))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonAction))
+        configTableViewEditing(isEditing: false, isHidden: true)
         configTableView()
         configData()
     }
@@ -58,6 +63,7 @@ class HomeViewController: UIViewController {
     
     func configTableView() {
         view.addSubview(tableView)
+        tableView.allowsMultipleSelectionDuringEditing = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -72,6 +78,37 @@ class HomeViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    @objc func cancelButtonAction() {
+        configTableViewEditing(isEditing: false, isHidden: true)
+        selectedAudios.removeAll()
+    }
+    
+    @objc func shareButtonAction() {
+        var activityItems: [URL] = []
+        selectedAudios.forEach { audioName in
+            let activityItem = URL.init(fileURLWithPath: Bundle.main.path(forResource: audioName, ofType: "mp3")!)
+            activityItems.append(activityItem)
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: activityItems,applicationActivities: nil)
+        activityVC.completionWithItemsHandler = { [weak self] _, success, _, _ in
+            guard let self = self else { return }
+            
+            if success {
+                self.configTableViewEditing(isEditing: false, isHidden: true)
+                self.selectedAudios.removeAll()
+            }
+        }
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true)
+    }
+    
+    func configTableViewEditing(isEditing: Bool, isHidden: Bool) {
+        tableView.setEditing(isEditing, animated: true)
+        navigationItem.rightBarButtonItem?.isHidden = isHidden
+        navigationItem.leftBarButtonItem?.isHidden = isHidden
     }
 }
 
@@ -89,26 +126,38 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = data.name
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard tableView.isEditing else { return }
+        let selectedRow = audios[indexPath.row].assetName
+        if let index = selectedAudios.firstIndex(of: selectedRow) {
+            selectedAudios.remove(at: index)
+        }
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing {
+            let selectedRow = audios[indexPath.row].assetName
+            selectedAudios.append(selectedRow)
+            return
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
         playAudio(audioName: audios[indexPath.row].assetName)
     }
-    
-    func makeContextMenu(Data: AudioModel) -> UIMenu {
-        let share = UIAction(title: "Compartilhar", image: UIImage(systemName: "square.and.arrow.up")) { action in
-            let activityItem = URL.init(fileURLWithPath: Bundle.main.path(forResource: Data.assetName, ofType: "mp3")!)
-            let activityVC = UIActivityViewController(activityItems: [activityItem],applicationActivities: nil)
-            activityVC.popoverPresentationController?.sourceView = self.view
-            self.present(activityVC, animated: true)
+ 
+    func makeContextMenu(indexPath: IndexPath) -> UIMenu {
+        let share = UIAction(title: "Compartilhar", image: UIImage(systemName: "square.and.arrow.up")) { [weak self] action in
+            guard let self = self else { return }
+            self.configTableViewEditing(isEditing: true, isHidden: false)
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            self.selectedAudios.append(self.audios[indexPath.row].assetName)
         }
         return UIMenu(title: "", children: [share])
     }
     
     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        let selectedCell = audios[indexPath.row]
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
-            return self.makeContextMenu(Data: selectedCell)
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+            return self.makeContextMenu(indexPath: indexPath)
         })
     }
 }

@@ -25,6 +25,7 @@
 		39DC233228525DF700B972B8 /* Ai_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39DC232428525DF700B972B8 /* Ai_audio.mp3 */; };
 		39DC233328525DF700B972B8 /* Cavalo_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39DC232528525DF700B972B8 /* Cavalo_audio.mp3 */; };
 		39DC233428525DF700B972B8 /* VamoDancar_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39DC232628525DF700B972B8 /* VamoDancar_audio.mp3 */; };
+		39DC2336285265E000B972B8 /* NavigationItemButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DC2335285265E000B972B8 /* NavigationItemButtons.swift */; };
 		5C520A732851233E004D3983 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C520A722851233E004D3983 /* AudioModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		39DC232428525DF700B972B8 /* Ai_audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ai_audio.mp3; sourceTree = "<group>"; };
 		39DC232528525DF700B972B8 /* Cavalo_audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cavalo_audio.mp3; sourceTree = "<group>"; };
 		39DC232628525DF700B972B8 /* VamoDancar_audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VamoDancar_audio.mp3; sourceTree = "<group>"; };
+		39DC2335285265E000B972B8 /* NavigationItemButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemButtons.swift; sourceTree = "<group>"; };
 		5C520A722851233E004D3983 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3911338D2851516600182D8D /* Audios */,
+				39DC2335285265E000B972B8 /* NavigationItemButtons.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DC2336285265E000B972B8 /* NavigationItemButtons.swift in Sources */,
 				395F7A25284FAEC700FFFE5F /* HomeViewController.swift in Sources */,
 				395F7A21284FAEC700FFFE5F /* AppDelegate.swift in Sources */,
 				5C520A732851233E004D3983 /* AudioModel.swift in Sources */,
@@ -377,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -406,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
